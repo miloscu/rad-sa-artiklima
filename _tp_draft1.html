@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rad sa artiklima</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="_tp_draft1.css">
+	<script type="text/javascript" src="_tp_draft1.js"></script> 
+</style>
+</head>
+<body>
+
+
+	<div class="containter">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<h1>Rad sa artiklima</h1>
+				<form>
+					<div>
+						Barkod:
+					</div>
+					<div>
+						<input id="barkodPolje" type="number" name="barkod" required="">
+					</div>
+					<div>
+						Naziv:
+					</div>
+					<div>
+						<input id="nazivPolje" type="text" name="naziv" required>
+					</div>
+					<div>
+						Opis artikla:
+					</div>
+					<div>
+						<textarea id="opisPolje" style="resize: none;" name="opis" maxlength="200"></textarea> 
+					</div>
+					<div>
+						Vrsta artikla:
+					</div>
+					<div>
+
+						<select id="vrstaSelect" required>
+							<option>Papirna galanterija</option>
+							<option>Vlažne maramice</option>
+							<option>Kozmetika</option>
+						</select>
+
+					</div>
+					<div>
+						Cena:
+					</div>
+					<div>
+						<input id="cenaPolje" onkeydown="preventEPlusMinus()" onkeyup="promenaCene()" type="number" name="cena">
+					</div>
+					<div>
+						Cena sa PDV:
+					</div>
+					<div>
+						<input id="pdvPolje" type="text" name="cenaSaPDV" disabled="">
+					</div>
+					<div>
+						Slika (PNG):
+					</div>
+					<div>
+						<input id="file-upload" type="file" onchange="promeniPreview(event)" accept=".PNG" name="filePicker" placeholder="hello">
+
+					</div>
+					<div>
+						<img id="previewImage" src="https://www.subaruhawaii.com/sites/default/files/styles/subaru_step2_accessory/public/model/model_management/1422063466_54c2f76a17fb1.jpg?itok=ogNOc0_k">	
+					</div>
+					<div>
+						<button type="button" class="btn btn-danger" onclick="dodajArtikl()">Unesi</button><!-- 
+						<button id="unesiDugme" onclick="dodajArtikl()">Unesi</button>
+						<p style="height: 0px">
+							<button id="dummyDugme" style="opacity: 0%; width: 0px; height:0px" onclick="null">Unesi</button>
+						</p> -->
+					</div>
+				</form></div>
+				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+					<div>
+						<label for="pretraga">Pretraga po nazivu:</label>
+						<input type="text" id="pretraga" name="pretraga" onkeyup="filtriraj()">
+						<label id="poslednjaPromena">Poslednji put azurirano: 0000-00-00</label>
+					</div>
+					<table id="onlyTable" class="table table-sm table-dark table-striped">
+						<thead class="thead-light btn-danger" style="border-top: 10px solid rgb(62,68,74);">
+							<tr>
+								<td scope="col">Barkod</td>
+								<td scope="col">Naziv</td>
+								<td scope="col">Opis artikla</td>
+								<td scope="col">Vrsta artikla</td>
+								<td scope="col">Cena osnovica</td>
+								<td scope="col">Cena sa PDV</td>
+								<td scope="col">Slika</td>
+							</tr>
+
+						</thead>
+						<thead></thead>
+						<tr style="height: 0px">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+
+	</body>
+	</html>

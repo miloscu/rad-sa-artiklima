@@ -1,0 +1,40 @@
+
+
+body {
+	margin: 1%;
+	background-color: rgba(238, 238, 238, 0.81) !important;
+	background-image: url("https://live.staticflickr.com/4061/4647436714_391db129a4_b.jpg");
+	background-blend-mode: color;
+}
+
+div {
+	text-align: center;
+	padding-bottom: 2%
+}
+
+input[type="file"] {
+	margin-left: 20%;
+}
+
+table {
+	border: 0px solid black !important;
+}
+
+/*
+table td {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}*/
+/*input[type="file"] {
+    display: none;
+}
+*/
+img {
+	width: 30%;
+	max-width: 70px;
+	max-height: 70px;
+	object-fit: contain;
+/*	margin-left: 40%;
+	text-anchor: center;
+	text-align: center;*/
+}
