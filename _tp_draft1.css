@@ -12,9 +12,9 @@ div {
 	padding-bottom: 2%
 }
 
-input[type="file"] {
+/*input[type="file"] {
 	margin-left: 20%;
-}
+}*/
 
 table {
 	border: 0px solid black !important;

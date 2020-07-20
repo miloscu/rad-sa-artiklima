@@ -21,13 +21,13 @@
 						Barkod:
 					</div>
 					<div>
-						<input id="barkodPolje" type="number" name="barkod" required="">
+						<input id="barkodPolje" onkeydown="preventEPlusMinus()" type="number" onchange="setRedIf()"  onkeyup="setRedIf()" name="barkod" min="0">
 					</div>
 					<div>
 						Naziv:
 					</div>
 					<div>
-						<input id="nazivPolje" type="text" name="naziv" required>
+						<input id="nazivPolje" type="text" onchange="setRedIf()" onkeyup="setRedIf()" name="naziv" required>
 					</div>
 					<div>
 						Opis artikla:
@@ -40,18 +40,26 @@
 					</div>
 					<div>
 
-						<select id="vrstaSelect" required>
+						<select id="vrstaSelect0" required>
 							<option>Papirna galanterija</option>
 							<option>Vlažne maramice</option>
 							<option>Kozmetika</option>
 						</select>
+
+						<input id="vrstaSelect" type="text" list="cars" />
+						<datalist id="cars">
+							<option>Volvo</option>
+							<option>Saab</option>
+							<option>Mercedes</option>
+							<option>Audi</option>
+						</datalist>
 
 					</div>
 					<div>
 						Cena:
 					</div>
 					<div>
-						<input id="cenaPolje" onkeydown="preventEPlusMinus()" onkeyup="promenaCene()" type="number" name="cena">
+						<input id="cenaPolje" onkeydown="preventEPlusMinus()" onkeyup="promenaCene()" type="number" name="cena" min="0">
 					</div>
 					<div>
 						Cena sa PDV:
@@ -67,7 +75,7 @@
 
 					</div>
 					<div>
-						<img id="previewImage" src="https://www.subaruhawaii.com/sites/default/files/styles/subaru_step2_accessory/public/model/model_management/1422063466_54c2f76a17fb1.jpg?itok=ogNOc0_k">	
+						<img id="previewImage" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/No-image-available.png">	
 					</div>
 					<div>
 						<button type="button" class="btn btn-danger" onclick="dodajArtikl()">Unesi</button><!-- 
@@ -81,10 +89,10 @@
 					<div>
 						<label for="pretraga">Pretraga po nazivu:</label>
 						<input type="text" id="pretraga" name="pretraga" onkeyup="filtriraj()">
-						<label id="poslednjaPromena">Poslednji put azurirano: 0000-00-00</label>
+						<label id="poslednjaPromena">Poslednji put azurirano: Nikad</label>
 					</div>
 					<table id="onlyTable" class="table table-sm table-dark table-striped">
-						<thead class="thead-light btn-danger" style="border-top: 10px solid rgb(62,68,74);">
+						<thead class="thead-light bg-danger">
 							<tr>
 								<td scope="col">Barkod</td>
 								<td scope="col">Naziv</td>
@@ -95,17 +103,10 @@
 								<td scope="col">Slika</td>
 							</tr>
 
+							<tbody id="teloTabele">
+								
+							</tbody>
 						</thead>
-						<thead></thead>
-						<tr style="height: 0px">
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
 					</table>
 				</div>
 			</div>
